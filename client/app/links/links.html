@@ -2,7 +2,9 @@
   <h1> LINKS MUDDAFUKKA</h1>
   <ul>
     <li ng-repeat = 'link in data.links'>
-      {{link}}
+      <h2>{{link.title}}</h2>
+      <p>{{link.visits}} Visits</p>
+      <a href='{{link.url}}'>{{link.base_url}}{{link.code}}</a>
     </li>
   </ul>
 </div>

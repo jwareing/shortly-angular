@@ -33,6 +33,7 @@ module.exports = {
   },
 
   newLink: function (req, res, next) {
+    console.log('new link has been called MUDDAFUKKAAAAAA');
     var url = req.body.url;
     console.log(req.body);
     if (!util.isValidUrl(url)) {
@@ -58,6 +59,7 @@ module.exports = {
             base_url: req.headers.origin,
             title: title
           };
+          console.log("newlink is "+JSON.stringify(newLink));
           return createLink(newLink);
         }
       })
