@@ -5,6 +5,7 @@ var util = require('../config/utils.js');
 
 module.exports = {
   findUrl: function (req, res, next, code) {
+    console.log('findUrl has been called');
     var findLink = Q.nbind(Link.findOne, Link);
     findLink({code: code})
       .then(function (link) {
@@ -21,6 +22,7 @@ module.exports = {
   },
 
   allLinks: function (req, res, next) {
+  console.log("all links has been called");
   var findAll = Q.nbind(Link.find, Link);
 
   findAll({})
@@ -74,6 +76,7 @@ module.exports = {
   },
 
   navToLink: function (req, res, next) {
+    console.log('navToLink has been called');
     var link = req.navLink;
     link.visits++;
     link.save(function (err, savedLink) {
